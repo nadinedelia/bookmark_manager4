@@ -1,0 +1,10 @@
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+  <% end %>
+</ul>
+
+<form action="/add_bookmarks" method="get">
+  <input type="submit" value="Add Bookmarks"
+  name="Add Bookmarks" id="frm1_submit">
+</form>

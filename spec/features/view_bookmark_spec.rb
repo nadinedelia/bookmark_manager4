@@ -5,7 +5,7 @@ require 'pg'
 feature 'viewing bookmarks' do
   scenario 'A user can view the bookmark manager' do
     visit '/'
-    expect(page).to have_content 'Bookmark Manager'
+    expect(page).to have_selector(:link_or_button, 'Add Bookmarks')
   end
 
   scenario 'A user can view their bookmarks' do
