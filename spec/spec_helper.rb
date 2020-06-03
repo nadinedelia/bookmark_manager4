@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
-ENV['RACK_ENV'] = 'test'
+require_relative './setup_test_database'
+
+ENV['ENVIRONMENT'] = 'test'
+
+# ENV['RACK_ENV'] = 'test'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
@@ -13,9 +23,9 @@ require 'simplecov-console'
 Capybara.app = BookmarkManager
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-                                                                 SimpleCov::Formatter::Console
-                                                                 # Want a nice code coverage website? Uncomment this next line!
-                                                                 # SimpleCov::Formatter::HTMLFormatter
+                          SimpleCov::Formatter::Console
+                          # Want a nice code coverage website? Uncomment this next line!
+                          # SimpleCov::Formatter::HTMLFormatter
                                                                ])
 SimpleCov.start
 
