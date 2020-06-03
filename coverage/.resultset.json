@@ -22,6 +22,13 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/student/gitDir/bookmark_manager/spec/features/add_bookmark_spec.rb": [
@@ -68,6 +75,6 @@
         null
       ]
     },
-    "timestamp": 1591200061
+    "timestamp": 1591202247
   }
 }
