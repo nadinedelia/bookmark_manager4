@@ -2,7 +2,6 @@
 
 require 'pg'
 class Bookmark
-  # attr_reader :urls
   def self.all
     if ENV['ENVIRONMENT'] =='test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
@@ -15,12 +14,12 @@ class Bookmark
     end
   end
 
-def self.create(url:)
+  def self.create(url:)
     if ENV['ENVIRONMENT'] =='test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
-  else
+    else
       connection = PG.connect(dbname: 'bookmark_manager')
-  end
+    end
 
     connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
   end
