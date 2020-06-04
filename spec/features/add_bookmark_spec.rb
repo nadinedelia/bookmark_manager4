@@ -12,6 +12,6 @@ feature 'add bookmark route' do
     fill_in :title, with: 'Guardian'
     click_button 'Submit'
 
-    expect(page).to have_content('Guardian', href: 'www.guardian.co.uk')
+    expect(page).to have_link('Guardian', href: 'www.guardian.co.uk')
   end
 end
