@@ -8,10 +8,10 @@ feature 'add bookmark route' do
   scenario 'user enter url of bookmark' do
     visit '/'
     click_button 'Add Bookmarks'
-    fill_in :url, with: 'www.guardian.co.uk'
-    fill_in :title, with: 'Guardian'
+    fill_in :url, with: 'http://www.testbookmark.com'
+    fill_in :title, with: 'Test Bookmark'
     click_button 'Submit'
 
-    expect(page).to have_link('Guardian', href: 'www.guardian.co.uk')
+    expect(page).to have_link('Test Bookmark', href: 'http://www.testbookmark.com')
   end
 end

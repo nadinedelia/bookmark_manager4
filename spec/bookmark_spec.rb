@@ -42,15 +42,3 @@ describe Bookmark do
     end
   end
 end
-
-
-
-
-
-
-  #     it 'creates a new bookmark' do
-  #       Bookmark.create(url: 'www.guardian.co.uk', title: 'Guardian')
-  #       expect(Bookmark.all).to include 'www.guardian.co.uk'
-  #     end
-  #   end
-  # end
